@@ -1,0 +1,52 @@
+﻿@*@model UserViewModel
+*@
+@{
+    ViewBag.Title = "Login";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />*@
+</head>
+<body>
+    <div id="form-wrapper" style="display:flex;">
+        <form class="form-group" asp-action="Index" style="max-width: 600px;display: flex;    margin: 0 auto;">
+        <fieldset>
+            <div>
+              @if (TempData["error"] != null)
+              {
+               <div class="alert alert-danger" style="text-align:center;">@TempData["error"]</div>
+              }
+            </div>
+            <legend style="text-align:center;">Sign In</legend>
+           
+           
+            <div class="form-group">
+                <label class="control-label">Sign In</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Password</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Platform</label>
+                <select id="drpEmpList" class="dropdown-menu show" class="form-control">
+                    <option value="">--Select--</option>
+                    <option value="">PNP</option>
+                    <option value="">Checkers</option>
+                </select>
+                <br />
+                <br />
+                <br />              
+                <input type="hidden" />
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </fieldset>
+    </form>
+    </div>
+</body>
+</html>
